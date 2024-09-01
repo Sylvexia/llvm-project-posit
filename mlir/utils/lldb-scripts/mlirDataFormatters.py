@@ -50,6 +50,8 @@ builtin_attr_type_mnemonics = {
     "mlir::CallSiteLoc": '"loc(callsite(...))"',
     "mlir::FusedLoc": '"loc(fused<...>[...])"',
     "mlir::UnknownLoc": '"loc(unknown)"',
+    "mlir::Posit8Es0Type": '"posit8es0"',
+    "mlir::Posit16Es1Type": '"posit16es1"',
     "mlir::Float8E5M2Type": '"f8E5M2"',
     "mlir::Float8E4M3FNType": '"f8E4M3FN"',
     "mlir::Float8E5M2FNUZType": '"f8E5M2FNUZ"',

@@ -337,6 +337,10 @@ def F8E4M3B11FNUZ : Type<CPred<"$_self.isFloat8E4M3B11FNUZ()">, "f8E4M3B11FNUZ t
                  BuildableType<"$_builder.getFloat8E4M3B11FNUZType()">;
 def F8E5M2FNUZ : Type<CPred<"$_self.isFloat8E5M2FNUZ()">, "f8E5M2FNUZ type">,
                  BuildableType<"$_builder.getFloat8E5M2FNUZType()">;
+def P8E0 : Type<CPred<"$_self.isPosit8Es0()">, "posit8es0 type">,
+                 BuildableType<"$_builder.getPosit8Es0Type()">;
+def P16E1 : Type<CPred<"$_self.isPosit16Es1()">, "posit16es1 type">,
+                 BuildableType<"$_builder.getPosit16Es1Type()">;
 
 def AnyComplex : Type<CPred<"::llvm::isa<::mlir::ComplexType>($_self)">,
                       "complex-type", "::mlir::ComplexType">;

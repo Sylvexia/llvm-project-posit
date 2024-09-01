@@ -79,6 +79,26 @@ MLIR_CAPI_EXPORTED bool mlirTypeIsAFloat(MlirType type);
 /// Returns the bitwidth of a floating-point type.
 MLIR_CAPI_EXPORTED unsigned mlirFloatTypeGetWidth(MlirType type);
 
+/// Returns the typeID of a Posit8Es0 type.
+MLIR_CAPI_EXPORTED MlirTypeID mlirPosit8Es0TypeGetTypeID(void);
+
+/// Checks whether the given type is a Posit8Es0 type.
+MLIR_CAPI_EXPORTED bool mlirTypeIsAPosit8Es0(MlirType type);
+
+/// Creates a Posit8Es0 type in the given context. The type is owned by the
+/// context.
+MLIR_CAPI_EXPORTED MlirType mlirPosit8Es0TypeGet(MlirContext ctx);
+
+/// Returns the typeID of a Posit16Es1 type.
+MLIR_CAPI_EXPORTED MlirTypeID mlirPosit16Es1TypeGetTypeID(void);
+
+/// Checks whether the given type is a Posit16Es1 type.
+MLIR_CAPI_EXPORTED bool mlirTypeIsAPosit16Es1(MlirType type);
+
+/// Creates a Posit8Es0 type in the given context. The type is owned by the
+/// context.
+MLIR_CAPI_EXPORTED MlirType mlirPosit16Es1TypeGet(MlirContext ctx);
+
 /// Returns the typeID of an Float8E5M2 type.
 MLIR_CAPI_EXPORTED MlirTypeID mlirFloat8E5M2TypeGetTypeID(void);
 

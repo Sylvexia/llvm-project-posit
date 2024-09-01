@@ -113,6 +113,10 @@ def testTypeIsInstance():
 def testFloatTypeSubclasses():
     ctx = Context()
     # CHECK: True
+    print(isinstance(Type.parse("posit8es0", ctx), FloatType))
+    # CHECK: True
+    print(isinstance(Type.parse("posit16es1", ctx), FloatType))
+    # CHECK: True
     print(isinstance(Type.parse("f8E4M3FN", ctx), FloatType))
     # CHECK: True
     print(isinstance(Type.parse("f8E5M2", ctx), FloatType))
@@ -229,6 +233,10 @@ def testIndexType():
 @run
 def testFloatType():
     with Context():
+        # CHECK: float: posit8es0
+        print("float:", Posit8Es0Type.get())
+        # CHECK: float: posit16es1
+        print("float:", Posit16Es1Type.get())
         # CHECK: float: f8E4M3FN
         print("float:", Float8E4M3FNType.get())
         # CHECK: float: f8E5M2

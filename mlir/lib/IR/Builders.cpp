@@ -34,6 +34,14 @@ Location Builder::getFusedLoc(ArrayRef<Location> locs, Attribute metadata) {
 // Types.
 //===----------------------------------------------------------------------===//
 
+FloatType Builder::getPosit8Es0Type() {
+  return FloatType::getPosit8Es0(context);
+}
+
+FloatType Builder::getPosit16Es1Type() {
+  return FloatType::getPosit16Es1(context);
+}
+
 FloatType Builder::getFloat8E5M2Type() {
   return FloatType::getFloat8E5M2(context);
 }

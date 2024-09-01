@@ -79,6 +79,23 @@ class Builtin_FloatType<string name, string mnemonic>
 //===----------------------------------------------------------------------===//
 // Float8E5M2Type
 
+def Builtin_Posit8Es0 : Builtin_FloatType<"Posit8Es0", "posit8es0"> {
+  let summary = "8-bit posit with 0 es";
+  let description = [{
+    Posit<8, 0>
+  }];
+}
+
+def Builtin_Posit16Es1 : Builtin_FloatType<"Posit16Es1", "posit16es1"> {
+  let summary = "16-bit posit with 1 es";
+  let description = [{
+    Posit<16, 1>
+  }];
+}
+
+//===----------------------------------------------------------------------===//
+// Float8E5M2Type
+
 def Builtin_Float8E5M2 : Builtin_FloatType<"Float8E5M2", "f8E5M2"> {
   let summary = "8-bit floating point with 2 bit mantissa";
   let description = [{

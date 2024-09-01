@@ -60,6 +60,8 @@ public:
   static FloatType getFloat8E5M2FNUZ(MLIRContext *ctx);
   static FloatType getFloat8E4M3FNUZ(MLIRContext *ctx);
   static FloatType getFloat8E4M3B11FNUZ(MLIRContext *ctx);
+  static FloatType getPosit8Es0(MLIRContext *ctx);
+  static FloatType getPosit16Es1(MLIRContext *ctx);
 
   /// Methods for support type inquiry through isa, cast, and dyn_cast.
   static bool classof(Type type);
@@ -405,10 +407,18 @@ inline bool BaseMemRefType::isValidElementType(Type type) {
 }
 
 inline bool FloatType::classof(Type type) {
-  return llvm::isa<Float8E5M2Type, Float8E4M3FNType, Float8E5M2FNUZType,
+  return llvm::isa<Posit8Es0Type, Posit16Es1Type, Float8E5M2Type, Float8E4M3FNType, Float8E5M2FNUZType,
                    Float8E4M3FNUZType, Float8E4M3B11FNUZType, BFloat16Type,
                    Float16Type, FloatTF32Type, Float32Type, Float64Type,
                    Float80Type, Float128Type>(type);
+}
+
+inline FloatType FloatType::getPosit8Es0(MLIRContext *ctx){
+  return Posit8Es0Type::get(ctx);
+}
+
+inline FloatType FloatType::getPosit16Es1(MLIRContext *ctx){
+  return Posit16Es1Type::get(ctx);
 }
 
 inline FloatType FloatType::getFloat8E5M2(MLIRContext *ctx) {

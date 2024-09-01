@@ -893,6 +893,8 @@ void MicrosoftCXXNameMangler::mangleFloat(llvm::APFloat Number) {
   case APFloat::S_x87DoubleExtended: Out << 'X'; break;
   case APFloat::S_IEEEquad: Out << 'Y'; break;
   case APFloat::S_PPCDoubleDouble: Out << 'Z'; break;
+  case APFloat::S_Posit8Es0:
+  case APFloat::S_Posit16Es1:
   case APFloat::S_Float8E5M2:
   case APFloat::S_Float8E4M3FN:
   case APFloat::S_Float8E5M2FNUZ:

@@ -156,6 +156,8 @@ struct APFloatBase {
     S_IEEEdouble,
     S_IEEEquad,
     S_PPCDoubleDouble,
+    S_Posit8Es0,
+    S_Posit16Es1,
     // 8-bit floating point number following IEEE-754 conventions with bit
     // layout S1E5M2 as described in https://arxiv.org/abs/2209.05433.
     S_Float8E5M2,
@@ -215,6 +217,8 @@ struct APFloatBase {
   static const fltSemantics &IEEEdouble() LLVM_READNONE;
   static const fltSemantics &IEEEquad() LLVM_READNONE;
   static const fltSemantics &PPCDoubleDouble() LLVM_READNONE;
+  static const fltSemantics &Posit8Es0() LLVM_READNONE;
+  static const fltSemantics &Posit16Es1() LLVM_READNONE;
   static const fltSemantics &Float8E5M2() LLVM_READNONE;
   static const fltSemantics &Float8E5M2FNUZ() LLVM_READNONE;
   static const fltSemantics &Float8E4M3FN() LLVM_READNONE;
@@ -636,6 +640,8 @@ private:
   APInt convertQuadrupleAPFloatToAPInt() const;
   APInt convertF80LongDoubleAPFloatToAPInt() const;
   APInt convertPPCDoubleDoubleAPFloatToAPInt() const;
+  APInt convertPosit8Es0APFloatToAPInt() const;
+  APInt convertPosit16Es1APFloatToAPInt() const;
   APInt convertFloat8E5M2APFloatToAPInt() const;
   APInt convertFloat8E5M2FNUZAPFloatToAPInt() const;
   APInt convertFloat8E4M3FNAPFloatToAPInt() const;
@@ -654,6 +660,8 @@ private:
   void initFromQuadrupleAPInt(const APInt &api);
   void initFromF80LongDoubleAPInt(const APInt &api);
   void initFromPPCDoubleDoubleAPInt(const APInt &api);
+  void initFromPosit8Es0APInt(const APInt &api);
+  void initFromPosit16Es1APInt(const APInt &api);
   void initFromFloat8E5M2APInt(const APInt &api);
   void initFromFloat8E5M2FNUZAPInt(const APInt &api);
   void initFromFloat8E4M3FNAPInt(const APInt &api);

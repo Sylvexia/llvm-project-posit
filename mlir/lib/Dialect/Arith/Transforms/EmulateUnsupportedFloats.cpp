@@ -55,6 +55,8 @@ static std::optional<FloatType> parseFloatType(MLIRContext *ctx,
                                                StringRef name) {
   Builder b(ctx);
   return llvm::StringSwitch<std::optional<FloatType>>(name)
+      .Case("posit8es0", b.getPosit8Es0Type())
+      .Case("posit16es1", b.getPosit16Es1Type())
       .Case("f8E5M2", b.getFloat8E5M2Type())
       .Case("f8E4M3FN", b.getFloat8E4M3FNType())
       .Case("f8E5M2FNUZ", b.getFloat8E5M2FNUZType())

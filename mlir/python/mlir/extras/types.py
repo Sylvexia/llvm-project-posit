@@ -71,6 +71,9 @@ f8E5M2 = lambda: Float8E5M2Type.get()
 f8E4M3 = lambda: Float8E4M3FNType.get()
 f8E4M3B11FNUZ = lambda: Float8E4M3B11FNUZType.get()
 
+posit8es0 = lambda: Posit8Es0Type.get()
+posit16es1 = lambda: Posit16Es1Type.get()
+
 none = lambda: NoneType.get()
 
 
